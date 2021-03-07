@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screen/Example.dart';
+import 'package:flutter_application_1/screen/form_screen.dart';
+import 'package:flutter_application_1/screen/list_view_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -35,6 +38,45 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Color(0xff7b7cff),
                 child: Image.asset('images/1.jpg'),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ListViewScreen(),
+                    ),
+                  );
+                },
+                child: Text("ListViewScreen"),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FormScreen(),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.people_outline),
+                label: Text("กดดิ"),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Example(),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.people_outline),
+                label: Text("Ex"),
+              ),
+              RaisedButton(
+                onPressed: () {},
+                child: Text("ไม่นะ"),
+              ),
             ],
           ),
         ),
@@ -51,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.mail),
               label: "mail",
-            )
+            ),
           ],
         ),
       ),
